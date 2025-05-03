@@ -1,0 +1,146 @@
+# FINAL STATS PROJECT
+
+the two questions
+
+Stats project
+
+2 questions
+
+1.  Which of the two genders has a longer lifespan
+
+2.  Is the current life span hitting a plateau
+
+The human lifespan has been increasing over the last 100 years. But which of the two sexes is increasing the fastest or which of them has a higher life span? The reasons behind this are vast, but I won't focus on that today. I'll be using a data set on life longevity between sexes and race, but I'll be focusing on sex.
+
+The histogram shows that women live more than men. The women's histogram shows two peaks around ages 75 and 80. For men, they have only a single peak which is around age 65. In the scatterplot, we can see that women had been livinglonger than men for a long time. Where men live you are around 70, women on the other hand make it well beyond 80
+
+The box plot shows that the women's median age is higher than men's. Now when it comes to a plateauing, there is some evidence to suggest that we are inching towards a plateau. On the scatterplot, we can see that life expectancy for both sexes increased dramatically in the years after 1900. But it starts to slow down as the years inch closer to our we can observe a pretty drastic slowdown of the increase. And now in the modern age, we can see it stagnant a little.
+
+# histogram for males and females
+
+males
+
+```{r}
+gh <- read.csv("~/Desktop/stat230-assignment-04-3/NCHS_-_Death_rates_and_life_expectancy_at_birth.csv")
+library(tidyverse)
+```
+
+```{r}
+
+male_data <- gh |> 
+  filter(Sex == "Male")
+
+
+ggplot(male_data, aes(x = Average.Life.Expectancy..Years.)) +
+  geom_histogram(bins = 30)
+
+
+
+```
+
+females
+
+```{r}
+
+Female_data <- gh |> 
+  filter(Sex == "Female") 
+ggplot(Female_data, aes(x = Average.Life.Expectancy..Years.)) +
+  geom_histogram(bins = 30)
+```
+
+females receive more
+
+## SCATTERPLOT
+
+male
+
+```{r}
+ggplot(male_data, aes(x = Year, y = Average.Life.Expectancy..Years.)) +
+  geom_point() 
+```
+
+female
+
+```{r}
+ggplot(Female_data, aes(x = Year, y = Average.Life.Expectancy..Years.)) +
+  geom_point() 
+```
+
+## Boxplot
+
+```{r}
+ gh
+ggplot(gh, aes(x = Sex, y = Average.Life.Expectancy..Years.)) +
+  geom_boxplot() 
+```
+
+MEAN
+
+```{r}
+gh |>
+  group_by(Sex) |>
+  summarize(
+    mean_life_expectancy = mean(Average.Life.Expectancy..Years., na.rm = TRUE),
+    sd_life_expectancy = sd(Average.Life.Expectancy..Years., na.rm = TRUE),
+    mean_death_rate = mean(Age.adjusted.Death.Rate, na.rm = TRUE),
+    sd_death_rate = sd(Age.adjusted.Death.Rate, na.rm = TRUE)
+  )
+```
+
+STANDARD DEV
+
+```{r}
+gh |>
+  filter(Sex == "Male") |>
+  summarize(sd_life_expectancy = sd(Average.Life.Expectancy..Years., na.rm = TRUE))
+gh |>
+  filter(Sex == "Female") |>
+  summarize(sd_life_expectancy = sd(Average.Life.Expectancy..Years., na.rm = TRUE))
+```
+
+MAX for males and females
+
+females
+
+```{r}
+gh |>
+  filter(Sex == "Female") |>
+  summarize(
+    min_life_expectancy = min(Average.Life.Expectancy..Years., na.rm = TRUE),
+    max_life_expectancy = max(Average.Life.Expectancy..Years., na.rm = TRUE)
+  )
+```
+
+males
+
+```{r}
+gh |>
+  filter(Sex == "Male") |>
+  summarize(
+    min_life_expectancy = min(Average.Life.Expectancy..Years., na.rm = TRUE),
+    max_life_expectancy = max(Average.Life.Expectancy..Years., na.rm = TRUE)
+  )
+```
+
+TTEST TWOSAMPLE
+
+```{r}
+gh_filtered <- gh %>%
+  filter(Sex %in% c("Male", "Female"))
+t_test_result <- t.test(Average.Life.Expectancy..Years. ~ Sex, data = gh_filtered)
+t_test_result
+```
+
+CONCLUSION
+
+T-test
+
+To confirm the finding I looked at the T-test
+
+The median is 67.12 for women
+
+The median for men is 61.92
+
+The P value shows that the data is statistically significant since it is small enough.
+
+In conclusion, we can see that women live 5 years longer than men and that we could be experiencing a slight plateauing of life expectancy in both men and women.
