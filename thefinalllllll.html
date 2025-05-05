@@ -1,0 +1,2886 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>thefinalllllll</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="THEFINALLLLLLL_files/libs/clipboard/clipboard.min.js"></script>
+<script src="THEFINALLLLLLL_files/libs/quarto-html/quarto.js"></script>
+<script src="THEFINALLLLLLL_files/libs/quarto-html/popper.min.js"></script>
+<script src="THEFINALLLLLLL_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="THEFINALLLLLLL_files/libs/quarto-html/anchor.min.js"></script>
+<link href="THEFINALLLLLLL_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="THEFINALLLLLLL_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="THEFINALLLLLLL_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="THEFINALLLLLLL_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="THEFINALLLLLLL_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="final-stats-project" class="level1">
+<h1>FINAL STATS PROJECT</h1>
+<p>the two questions</p>
+<p>Stats project</p>
+<p>2 questions</p>
+<ol type="1">
+<li><p>Which of the two genders has a longer lifespan</p></li>
+<li><p>Is the current life span hitting a plateau</p></li>
+</ol>
+<p>The human lifespan has been increasing over the last 100 years. But which of the two sexes is increasing the fastest or which of them has a higher life span? The reasons behind this are vast, but I won’t focus on that today. I’ll be using a data set on life longevity between sexes and race, but I’ll be focusing on sex.</p>
+<p>The histogram shows that women live more than men. The women’s histogram shows two peaks around ages 75 and 80. For men, they have only a single peak which is around age 65. In the scatterplot, we can see that women had been livinglonger than men for a long time. Where men live you are around 70, women on the other hand make it well beyond 80</p>
+<p>The box plot shows that the women’s median age is higher than men’s. Now when it comes to a plateauing, there is some evidence to suggest that we are inching towards a plateau. On the scatterplot, we can see that life expectancy for both sexes increased dramatically in the years after 1900. But it starts to slow down as the years inch closer to our we can observe a pretty drastic slowdown of the increase. And now in the modern age, we can see it stagnant a little.</p>
+</section>
+<section id="histogram-for-males-and-females" class="level1">
+<h1>histogram for males and females</h1>
+<p>males</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>gh <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/Desktop/stat230-assignment-04-3/NCHS_-_Death_rates_and_life_expectancy_at_birth.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>male_data <span class="ot">&lt;-</span> gh <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"Male"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(male_data, <span class="fu">aes</span>(<span class="at">x =</span> Average.Life.Expectancy..Years.)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="THEFINALLLLLLL_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>females</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Female_data <span class="ot">&lt;-</span> gh <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"Female"</span>) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Female_data, <span class="fu">aes</span>(<span class="at">x =</span> Average.Life.Expectancy..Years.)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="THEFINALLLLLLL_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>females receive more</p>
+<section id="scatterplot" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot">SCATTERPLOT</h2>
+<p>male</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(male_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Average.Life.Expectancy..Years.)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="THEFINALLLLLLL_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>female</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Female_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Average.Life.Expectancy..Years.)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="THEFINALLLLLLL_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot" class="level2">
+<h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a> gh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Year      Race        Sex Average.Life.Expectancy..Years.
+1    1900 All Races Both Sexes                            47.3
+2    1901 All Races Both Sexes                            49.1
+3    1902 All Races Both Sexes                            51.5
+4    1903 All Races Both Sexes                            50.5
+5    1904 All Races Both Sexes                            47.6
+6    1905 All Races Both Sexes                            48.7
+7    1906 All Races Both Sexes                            48.7
+8    1907 All Races Both Sexes                            47.6
+9    1908 All Races Both Sexes                            51.1
+10   1909 All Races Both Sexes                            52.1
+11   1910 All Races Both Sexes                            50.0
+12   1911 All Races Both Sexes                            52.6
+13   1912 All Races Both Sexes                            53.5
+14   1913 All Races Both Sexes                            52.5
+15   1914 All Races Both Sexes                            54.2
+16   1915 All Races Both Sexes                            54.5
+17   1916 All Races Both Sexes                            51.7
+18   1917 All Races Both Sexes                            50.9
+19   1918 All Races Both Sexes                            39.1
+20   1919 All Races Both Sexes                            54.7
+21   1920 All Races Both Sexes                            54.1
+22   1921 All Races Both Sexes                            60.8
+23   1922 All Races Both Sexes                            59.6
+24   1923 All Races Both Sexes                            57.2
+25   1924 All Races Both Sexes                            59.7
+26   1925 All Races Both Sexes                            59.0
+27   1926 All Races Both Sexes                            56.7
+28   1927 All Races Both Sexes                            60.4
+29   1928 All Races Both Sexes                            56.8
+30   1929 All Races Both Sexes                            57.1
+31   1930 All Races Both Sexes                            59.7
+32   1931 All Races Both Sexes                            61.1
+33   1932 All Races Both Sexes                            62.1
+34   1933 All Races Both Sexes                            63.3
+35   1934 All Races Both Sexes                            61.1
+36   1935 All Races Both Sexes                            61.7
+37   1936 All Races Both Sexes                            58.5
+38   1937 All Races Both Sexes                            60.0
+39   1938 All Races Both Sexes                            63.5
+40   1939 All Races Both Sexes                            63.7
+41   1940 All Races Both Sexes                            62.9
+42   1941 All Races Both Sexes                            64.8
+43   1942 All Races Both Sexes                            66.2
+44   1943 All Races Both Sexes                            63.3
+45   1944 All Races Both Sexes                            65.2
+46   1945 All Races Both Sexes                            65.9
+47   1946 All Races Both Sexes                            66.7
+48   1947 All Races Both Sexes                            66.8
+49   1948 All Races Both Sexes                            67.2
+50   1949 All Races Both Sexes                            68.0
+51   1950 All Races Both Sexes                            68.2
+52   1951 All Races Both Sexes                            68.4
+53   1952 All Races Both Sexes                            68.6
+54   1953 All Races Both Sexes                            68.8
+55   1954 All Races Both Sexes                            69.6
+56   1955 All Races Both Sexes                            69.6
+57   1956 All Races Both Sexes                            69.7
+58   1957 All Races Both Sexes                            69.5
+59   1958 All Races Both Sexes                            69.6
+60   1959 All Races Both Sexes                            69.9
+61   1960 All Races Both Sexes                            69.7
+62   1961 All Races Both Sexes                            70.2
+63   1962 All Races Both Sexes                            70.1
+64   1963 All Races Both Sexes                            69.9
+65   1964 All Races Both Sexes                            70.2
+66   1965 All Races Both Sexes                            70.2
+67   1966 All Races Both Sexes                            70.2
+68   1967 All Races Both Sexes                            70.5
+69   1968 All Races Both Sexes                            70.2
+70   1969 All Races Both Sexes                            70.5
+71   1970 All Races Both Sexes                            70.8
+72   1971 All Races Both Sexes                            71.1
+73   1972 All Races Both Sexes                            71.2
+74   1973 All Races Both Sexes                            71.4
+75   1974 All Races Both Sexes                            72.0
+76   1975 All Races Both Sexes                            72.6
+77   1976 All Races Both Sexes                            72.9
+78   1977 All Races Both Sexes                            73.3
+79   1978 All Races Both Sexes                            73.5
+80   1979 All Races Both Sexes                            73.9
+81   1980 All Races Both Sexes                            73.7
+82   1981 All Races Both Sexes                            74.1
+83   1982 All Races Both Sexes                            74.5
+84   1983 All Races Both Sexes                            74.6
+85   1984 All Races Both Sexes                            74.7
+86   1985 All Races Both Sexes                            74.7
+87   1986 All Races Both Sexes                            74.7
+88   1987 All Races Both Sexes                            74.9
+89   1988 All Races Both Sexes                            74.9
+90   1989 All Races Both Sexes                            75.1
+91   1990 All Races Both Sexes                            75.4
+92   1991 All Races Both Sexes                            75.5
+93   1992 All Races Both Sexes                            75.8
+94   1993 All Races Both Sexes                            75.5
+95   1994 All Races Both Sexes                            75.7
+96   1995 All Races Both Sexes                            75.8
+97   1996 All Races Both Sexes                            76.1
+98   1997 All Races Both Sexes                            76.5
+99   1998 All Races Both Sexes                            76.7
+100  1999 All Races Both Sexes                            76.7
+101  2000 All Races Both Sexes                            76.8
+102  2001 All Races Both Sexes                            77.0
+103  2002 All Races Both Sexes                            77.0
+104  2003 All Races Both Sexes                            77.6
+105  2004 All Races Both Sexes                            77.5
+106  2005 All Races Both Sexes                            77.6
+107  2006 All Races Both Sexes                            77.8
+108  2007 All Races Both Sexes                            78.1
+109  2008 All Races Both Sexes                            78.2
+110  2009 All Races Both Sexes                            78.5
+111  2010 All Races Both Sexes                            78.7
+112  2011 All Races Both Sexes                            78.7
+113  2012 All Races Both Sexes                            78.8
+114  2013 All Races Both Sexes                            78.8
+115  2014 All Races Both Sexes                            78.9
+116  2015 All Races Both Sexes                            78.7
+117  2016 All Races Both Sexes                            78.7
+118  2017 All Races Both Sexes                            78.6
+119  2018 All Races Both Sexes                            78.7
+120  1900 All Races     Female                            48.3
+121  1901 All Races     Female                            50.6
+122  1902 All Races     Female                            53.4
+123  1903 All Races     Female                            52.0
+124  1904 All Races     Female                            49.1
+125  1905 All Races     Female                            50.2
+126  1906 All Races     Female                            50.8
+127  1907 All Races     Female                            49.9
+128  1908 All Races     Female                            52.8
+129  1909 All Races     Female                            53.8
+130  1910 All Races     Female                            51.8
+131  1911 All Races     Female                            54.4
+132  1912 All Races     Female                            55.9
+133  1913 All Races     Female                            55.0
+134  1914 All Races     Female                            56.8
+135  1915 All Races     Female                            56.8
+136  1916 All Races     Female                            54.3
+137  1917 All Races     Female                            54.0
+138  1918 All Races     Female                            42.2
+139  1919 All Races     Female                            56.0
+140  1920 All Races     Female                            54.6
+141  1921 All Races     Female                            61.8
+142  1922 All Races     Female                            61.0
+143  1923 All Races     Female                            58.5
+144  1924 All Races     Female                            61.5
+145  1925 All Races     Female                            60.6
+146  1926 All Races     Female                            58.0
+147  1927 All Races     Female                            62.1
+148  1928 All Races     Female                            58.3
+149  1929 All Races     Female                            58.7
+150  1930 All Races     Female                            61.6
+151  1931 All Races     Female                            63.1
+152  1932 All Races     Female                            63.5
+153  1933 All Races     Female                            65.1
+154  1934 All Races     Female                            63.3
+155  1935 All Races     Female                            63.9
+156  1936 All Races     Female                            60.6
+157  1937 All Races     Female                            62.4
+158  1938 All Races     Female                            65.3
+159  1939 All Races     Female                            65.4
+160  1940 All Races     Female                            65.2
+161  1941 All Races     Female                            66.8
+162  1942 All Races     Female                            67.9
+163  1943 All Races     Female                            64.4
+164  1944 All Races     Female                            66.8
+165  1945 All Races     Female                            67.9
+166  1946 All Races     Female                            69.4
+167  1947 All Races     Female                            69.7
+168  1948 All Races     Female                            69.9
+169  1949 All Races     Female                            70.7
+170  1950 All Races     Female                            71.1
+171  1951 All Races     Female                            71.4
+172  1952 All Races     Female                            71.6
+173  1953 All Races     Female                            72.0
+174  1954 All Races     Female                            72.8
+175  1955 All Races     Female                            72.8
+176  1956 All Races     Female                            72.9
+177  1957 All Races     Female                            72.7
+178  1958 All Races     Female                            72.9
+179  1959 All Races     Female                            73.2
+180  1960 All Races     Female                            73.1
+181  1961 All Races     Female                            73.6
+182  1962 All Races     Female                            73.5
+183  1963 All Races     Female                            73.4
+184  1964 All Races     Female                            73.7
+185  1965 All Races     Female                            73.8
+186  1966 All Races     Female                            73.9
+187  1967 All Races     Female                            74.3
+188  1968 All Races     Female                            74.1
+189  1969 All Races     Female                            74.4
+190  1970 All Races     Female                            74.7
+191  1971 All Races     Female                            75.0
+192  1972 All Races     Female                            75.1
+193  1973 All Races     Female                            75.3
+194  1974 All Races     Female                            75.9
+195  1975 All Races     Female                            76.6
+196  1976 All Races     Female                            76.8
+197  1977 All Races     Female                            77.2
+198  1978 All Races     Female                            77.3
+199  1979 All Races     Female                            77.8
+200  1980 All Races     Female                            77.4
+201  1981 All Races     Female                            77.8
+202  1982 All Races     Female                            78.1
+203  1983 All Races     Female                            78.1
+204  1984 All Races     Female                            78.2
+205  1985 All Races     Female                            78.2
+206  1986 All Races     Female                            78.2
+207  1987 All Races     Female                            78.3
+208  1988 All Races     Female                            78.3
+209  1989 All Races     Female                            78.5
+210  1990 All Races     Female                            78.8
+211  1991 All Races     Female                            78.9
+212  1992 All Races     Female                            79.1
+213  1993 All Races     Female                            78.8
+214  1994 All Races     Female                            79.0
+215  1995 All Races     Female                            78.9
+216  1996 All Races     Female                            79.1
+217  1997 All Races     Female                            79.4
+218  1998 All Races     Female                            79.5
+219  1999 All Races     Female                            79.4
+220  2000 All Races     Female                            79.7
+221  2001 All Races     Female                            79.5
+222  2002 All Races     Female                            79.6
+223  2003 All Races     Female                            79.7
+224  2004 All Races     Female                            80.1
+225  2005 All Races     Female                            80.1
+226  2006 All Races     Female                            80.3
+227  2007 All Races     Female                            80.6
+228  2008 All Races     Female                            80.6
+229  2009 All Races     Female                            80.9
+230  2010 All Races     Female                            81.0
+231  2011 All Races     Female                            81.1
+232  2012 All Races     Female                            81.2
+233  2013 All Races     Female                            81.2
+234  2014 All Races     Female                            81.3
+235  2015 All Races     Female                            81.1
+236  2016 All Races     Female                            81.1
+237  2017 All Races     Female                            81.1
+238  2018 All Races     Female                            81.2
+239  1900 All Races       Male                            46.3
+240  1901 All Races       Male                            47.6
+241  1902 All Races       Male                            49.8
+242  1903 All Races       Male                            49.1
+243  1904 All Races       Male                            46.2
+244  1905 All Races       Male                            47.3
+245  1906 All Races       Male                            46.9
+246  1907 All Races       Male                            45.6
+247  1908 All Races       Male                            49.5
+248  1909 All Races       Male                            50.5
+249  1910 All Races       Male                            48.4
+250  1911 All Races       Male                            50.9
+251  1912 All Races       Male                            51.5
+252  1913 All Races       Male                            50.3
+253  1914 All Races       Male                            52.0
+254  1915 All Races       Male                            52.5
+255  1916 All Races       Male                            49.6
+256  1917 All Races       Male                            48.4
+257  1918 All Races       Male                            36.6
+258  1919 All Races       Male                            53.5
+259  1920 All Races       Male                            53.6
+260  1921 All Races       Male                            60.0
+261  1922 All Races       Male                            58.4
+262  1923 All Races       Male                            56.1
+263  1924 All Races       Male                            58.1
+264  1925 All Races       Male                            57.6
+265  1926 All Races       Male                            55.5
+266  1927 All Races       Male                            59.0
+267  1928 All Races       Male                            55.6
+268  1929 All Races       Male                            55.8
+269  1930 All Races       Male                            58.1
+270  1931 All Races       Male                            59.4
+271  1932 All Races       Male                            61.0
+272  1933 All Races       Male                            61.7
+273  1934 All Races       Male                            59.3
+274  1935 All Races       Male                            59.9
+275  1936 All Races       Male                            56.6
+276  1937 All Races       Male                            58.0
+277  1938 All Races       Male                            61.9
+278  1939 All Races       Male                            62.1
+279  1940 All Races       Male                            60.8
+280  1941 All Races       Male                            63.1
+281  1942 All Races       Male                            64.7
+282  1943 All Races       Male                            62.4
+283  1944 All Races       Male                            63.6
+284  1945 All Races       Male                            63.6
+285  1946 All Races       Male                            64.4
+286  1947 All Races       Male                            64.4
+287  1948 All Races       Male                            64.6
+288  1949 All Races       Male                            65.2
+289  1950 All Races       Male                            65.6
+290  1951 All Races       Male                            65.6
+291  1952 All Races       Male                            65.8
+292  1953 All Races       Male                            66.0
+293  1954 All Races       Male                            66.7
+294  1955 All Races       Male                            66.7
+295  1956 All Races       Male                            66.7
+296  1957 All Races       Male                            66.4
+297  1958 All Races       Male                            66.6
+298  1959 All Races       Male                            66.8
+299  1960 All Races       Male                            66.6
+300  1961 All Races       Male                            67.1
+301  1962 All Races       Male                            66.9
+302  1963 All Races       Male                            66.6
+303  1964 All Races       Male                            66.8
+304  1965 All Races       Male                            66.8
+305  1966 All Races       Male                            66.7
+306  1967 All Races       Male                            67.0
+307  1968 All Races       Male                            66.6
+308  1969 All Races       Male                            66.8
+309  1970 All Races       Male                            67.1
+310  1971 All Races       Male                            67.4
+311  1972 All Races       Male                            67.4
+312  1973 All Races       Male                            67.6
+313  1974 All Races       Male                            68.2
+314  1975 All Races       Male                            68.8
+315  1976 All Races       Male                            69.1
+316  1977 All Races       Male                            69.5
+317  1978 All Races       Male                            69.6
+318  1979 All Races       Male                            70.0
+319  1980 All Races       Male                            70.0
+320  1981 All Races       Male                            70.4
+321  1982 All Races       Male                            70.8
+322  1983 All Races       Male                            71.0
+323  1984 All Races       Male                            71.1
+324  1985 All Races       Male                            71.1
+325  1986 All Races       Male                            71.2
+326  1987 All Races       Male                            71.4
+327  1988 All Races       Male                            71.4
+328  1989 All Races       Male                            71.7
+329  1990 All Races       Male                            71.8
+330  1991 All Races       Male                            72.0
+331  1992 All Races       Male                            72.3
+332  1993 All Races       Male                            72.2
+333  1994 All Races       Male                            72.4
+334  1995 All Races       Male                            72.5
+335  1996 All Races       Male                            73.1
+336  1997 All Races       Male                            73.6
+337  1998 All Races       Male                            73.8
+338  1999 All Races       Male                            73.9
+339  2000 All Races       Male                            74.3
+340  2001 All Races       Male                            74.3
+341  2002 All Races       Male                            74.4
+342  2003 All Races       Male                            74.5
+343  2004 All Races       Male                            75.0
+344  2005 All Races       Male                            75.0
+345  2006 All Races       Male                            75.2
+346  2007 All Races       Male                            75.5
+347  2008 All Races       Male                            75.6
+348  2009 All Races       Male                            76.0
+349  2010 All Races       Male                            76.2
+350  2011 All Races       Male                            76.3
+351  2012 All Races       Male                            76.4
+352  2013 All Races       Male                            76.4
+353  2014 All Races       Male                            76.5
+354  2015 All Races       Male                            76.3
+355  2016 All Races       Male                            76.2
+356  2017 All Races       Male                            76.1
+357  2018 All Races       Male                            76.2
+358  1900     Black Both Sexes                            33.0
+359  1901     Black Both Sexes                            33.7
+360  1902     Black Both Sexes                            34.6
+361  1903     Black Both Sexes                            33.1
+362  1904     Black Both Sexes                            30.8
+363  1905     Black Both Sexes                            31.3
+364  1906     Black Both Sexes                            32.9
+365  1907     Black Both Sexes                            32.5
+366  1908     Black Both Sexes                            34.9
+367  1909     Black Both Sexes                            35.7
+368  1910     Black Both Sexes                            35.6
+369  1911     Black Both Sexes                            36.4
+370  1912     Black Both Sexes                            37.9
+371  1913     Black Both Sexes                            38.4
+372  1914     Black Both Sexes                            38.9
+373  1915     Black Both Sexes                            38.9
+374  1916     Black Both Sexes                            41.3
+375  1917     Black Both Sexes                            38.8
+376  1918     Black Both Sexes                            31.1
+377  1919     Black Both Sexes                            44.5
+378  1920     Black Both Sexes                            45.3
+379  1921     Black Both Sexes                            51.5
+380  1922     Black Both Sexes                            52.4
+381  1923     Black Both Sexes                            48.3
+382  1924     Black Both Sexes                            46.6
+383  1925     Black Both Sexes                            45.7
+384  1926     Black Both Sexes                            44.6
+385  1927     Black Both Sexes                            48.2
+386  1928     Black Both Sexes                            46.3
+387  1929     Black Both Sexes                            46.7
+388  1930     Black Both Sexes                            48.1
+389  1931     Black Both Sexes                            50.4
+390  1932     Black Both Sexes                            53.7
+391  1933     Black Both Sexes                            54.7
+392  1934     Black Both Sexes                            51.8
+393  1935     Black Both Sexes                            53.1
+394  1936     Black Both Sexes                            49.0
+395  1937     Black Both Sexes                            50.3
+396  1938     Black Both Sexes                            52.9
+397  1939     Black Both Sexes                            54.5
+398  1940     Black Both Sexes                            53.1
+399  1941     Black Both Sexes                            53.8
+400  1942     Black Both Sexes                            56.6
+401  1943     Black Both Sexes                            55.6
+402  1944     Black Both Sexes                            56.6
+403  1945     Black Both Sexes                            57.7
+404  1946     Black Both Sexes                            59.1
+405  1947     Black Both Sexes                            59.7
+406  1948     Black Both Sexes                            60.0
+407  1949     Black Both Sexes                            60.6
+408  1950     Black Both Sexes                            60.8
+409  1951     Black Both Sexes                            61.2
+410  1952     Black Both Sexes                            61.4
+411  1953     Black Both Sexes                            62.0
+412  1954     Black Both Sexes                            63.4
+413  1955     Black Both Sexes                            63.7
+414  1956     Black Both Sexes                            63.6
+415  1957     Black Both Sexes                            63.0
+416  1958     Black Both Sexes                            63.4
+417  1959     Black Both Sexes                            63.9
+418  1960     Black Both Sexes                            63.6
+419  1961     Black Both Sexes                            64.5
+420  1962     Black Both Sexes                            64.2
+421  1963     Black Both Sexes                            63.7
+422  1964     Black Both Sexes                            64.2
+423  1965     Black Both Sexes                            64.3
+424  1966     Black Both Sexes                            64.2
+425  1967     Black Both Sexes                            64.9
+426  1968     Black Both Sexes                            64.1
+427  1969     Black Both Sexes                            64.5
+428  1970     Black Both Sexes                            64.1
+429  1971     Black Both Sexes                            64.6
+430  1972     Black Both Sexes                            64.7
+431  1973     Black Both Sexes                            65.0
+432  1974     Black Both Sexes                            66.0
+433  1975     Black Both Sexes                            66.8
+434  1976     Black Both Sexes                            67.2
+435  1977     Black Both Sexes                            67.7
+436  1978     Black Both Sexes                            68.1
+437  1979     Black Both Sexes                            68.5
+438  1980     Black Both Sexes                            68.1
+439  1981     Black Both Sexes                            68.9
+440  1982     Black Both Sexes                            69.4
+441  1983     Black Both Sexes                            69.4
+442  1984     Black Both Sexes                            69.5
+443  1985     Black Both Sexes                            69.3
+444  1986     Black Both Sexes                            69.1
+445  1987     Black Both Sexes                            69.1
+446  1988     Black Both Sexes                            68.9
+447  1989     Black Both Sexes                            68.8
+448  1990     Black Both Sexes                            69.1
+449  1991     Black Both Sexes                            69.3
+450  1992     Black Both Sexes                            69.6
+451  1993     Black Both Sexes                            69.2
+452  1994     Black Both Sexes                            69.5
+453  1995     Black Both Sexes                            69.6
+454  1996     Black Both Sexes                            70.2
+455  1997     Black Both Sexes                            71.1
+456  1998     Black Both Sexes                            71.3
+457  1999     Black Both Sexes                            71.4
+458  2000     Black Both Sexes                            71.8
+459  2001     Black Both Sexes                            72.0
+460  2002     Black Both Sexes                            72.2
+461  2003     Black Both Sexes                            72.4
+462  2004     Black Both Sexes                            72.9
+463  2005     Black Both Sexes                            73.0
+464  2006     Black Both Sexes                            73.4
+465  2007     Black Both Sexes                            73.8
+466  2008     Black Both Sexes                            74.3
+467  2009     Black Both Sexes                            74.7
+468  2010     Black Both Sexes                            75.1
+469  2011     Black Both Sexes                            75.3
+470  2012     Black Both Sexes                            75.5
+471  2013     Black Both Sexes                            75.5
+472  2014     Black Both Sexes                            75.6
+473  2015     Black Both Sexes                            75.5
+474  2016     Black Both Sexes                            75.3
+475  2017     Black Both Sexes                            75.3
+476  2018     Black Both Sexes                              NA
+477  1900     Black     Female                            33.5
+478  1901     Black     Female                            35.3
+479  1902     Black     Female                            36.4
+480  1903     Black     Female                            34.6
+481  1904     Black     Female                            32.7
+482  1905     Black     Female                            33.1
+483  1906     Black     Female                            33.9
+484  1907     Black     Female                            34.0
+485  1908     Black     Female                            36.0
+486  1909     Black     Female                            37.3
+487  1910     Black     Female                            37.5
+488  1911     Black     Female                            38.2
+489  1912     Black     Female                            40.0
+490  1913     Black     Female                            40.3
+491  1914     Black     Female                            40.8
+492  1915     Black     Female                            40.5
+493  1916     Black     Female                            43.1
+494  1917     Black     Female                            40.8
+495  1918     Black     Female                            32.5
+496  1919     Black     Female                            44.4
+497  1920     Black     Female                            45.2
+498  1921     Black     Female                            51.3
+499  1922     Black     Female                            53.0
+500  1923     Black     Female                            48.9
+501  1924     Black     Female                            47.8
+502  1925     Black     Female                            46.7
+503  1926     Black     Female                            45.6
+504  1927     Black     Female                            48.9
+505  1928     Black     Female                            47.0
+506  1929     Black     Female                            47.8
+507  1930     Black     Female                            49.2
+508  1931     Black     Female                            51.5
+509  1932     Black     Female                            54.6
+510  1933     Black     Female                            56.0
+511  1934     Black     Female                            53.7
+512  1935     Black     Female                            55.2
+513  1936     Black     Female                            51.4
+514  1937     Black     Female                            52.5
+515  1938     Black     Female                            54.3
+516  1939     Black     Female                            56.0
+517  1940     Black     Female                            54.9
+518  1941     Black     Female                            55.3
+519  1942     Black     Female                            58.2
+520  1943     Black     Female                            56.1
+521  1944     Black     Female                            57.7
+522  1945     Black     Female                            59.6
+523  1946     Black     Female                            61.0
+524  1947     Black     Female                            61.9
+525  1948     Black     Female                            62.5
+526  1949     Black     Female                            62.7
+527  1950     Black     Female                            62.9
+528  1951     Black     Female                            63.4
+529  1952     Black     Female                            63.8
+530  1953     Black     Female                            64.5
+531  1954     Black     Female                            65.9
+532  1955     Black     Female                            66.1
+533  1956     Black     Female                            66.1
+534  1957     Black     Female                            65.5
+535  1958     Black     Female                            65.8
+536  1959     Black     Female                            66.5
+537  1960     Black     Female                            66.3
+538  1961     Black     Female                            67.1
+539  1962     Black     Female                            66.9
+540  1963     Black     Female                            66.6
+541  1964     Black     Female                            67.3
+542  1965     Black     Female                            67.6
+543  1966     Black     Female                            67.6
+544  1967     Black     Female                            68.5
+545  1968     Black     Female                            67.9
+546  1969     Black     Female                            68.6
+547  1970     Black     Female                            68.3
+548  1971     Black     Female                            68.9
+549  1972     Black     Female                            69.1
+550  1973     Black     Female                            69.3
+551  1974     Black     Female                            70.3
+552  1975     Black     Female                            71.3
+553  1976     Black     Female                            71.6
+554  1977     Black     Female                            72.0
+555  1978     Black     Female                            72.4
+556  1979     Black     Female                            72.9
+557  1980     Black     Female                            72.5
+558  1981     Black     Female                            73.2
+559  1982     Black     Female                            73.6
+560  1983     Black     Female                            73.5
+561  1984     Black     Female                            73.6
+562  1985     Black     Female                            73.4
+563  1986     Black     Female                            73.4
+564  1987     Black     Female                            73.4
+565  1988     Black     Female                            73.2
+566  1989     Black     Female                            73.3
+567  1990     Black     Female                            73.6
+568  1991     Black     Female                            73.8
+569  1992     Black     Female                            73.9
+570  1993     Black     Female                            73.7
+571  1994     Black     Female                            73.9
+572  1995     Black     Female                            73.9
+573  1996     Black     Female                            74.2
+574  1997     Black     Female                            74.7
+575  1998     Black     Female                            74.8
+576  1999     Black     Female                            74.7
+577  2000     Black     Female                            75.1
+578  2001     Black     Female                            75.3
+579  2002     Black     Female                            75.4
+580  2003     Black     Female                            75.7
+581  2004     Black     Female                            76.1
+582  2005     Black     Female                            76.2
+583  2006     Black     Female                            76.7
+584  2007     Black     Female                            77.0
+585  2008     Black     Female                            77.3
+586  2009     Black     Female                            77.7
+587  2010     Black     Female                            78.0
+588  2011     Black     Female                            78.2
+589  2012     Black     Female                            78.4
+590  2013     Black     Female                            78.4
+591  2014     Black     Female                            78.5
+592  2015     Black     Female                            78.5
+593  2016     Black     Female                            78.3
+594  2017     Black     Female                            78.5
+595  2018     Black     Female                              NA
+596  1900     Black       Male                            32.5
+597  1901     Black       Male                            32.2
+598  1902     Black       Male                            32.9
+599  1903     Black       Male                            31.7
+600  1904     Black       Male                            29.1
+601  1905     Black       Male                            29.6
+602  1906     Black       Male                            31.8
+603  1907     Black       Male                            31.1
+604  1908     Black       Male                            33.8
+605  1909     Black       Male                            34.2
+606  1910     Black       Male                            33.8
+607  1911     Black       Male                            34.6
+608  1912     Black       Male                            35.9
+609  1913     Black       Male                            36.7
+610  1914     Black       Male                            37.1
+611  1915     Black       Male                            37.5
+612  1916     Black       Male                            39.6
+613  1917     Black       Male                            37.0
+614  1918     Black       Male                            29.9
+615  1919     Black       Male                            44.5
+616  1920     Black       Male                            45.5
+617  1921     Black       Male                            51.6
+618  1922     Black       Male                            51.8
+619  1923     Black       Male                            47.7
+620  1924     Black       Male                            45.5
+621  1925     Black       Male                            44.9
+622  1926     Black       Male                            43.7
+623  1927     Black       Male                            47.6
+624  1928     Black       Male                            45.6
+625  1929     Black       Male                            45.7
+626  1930     Black       Male                            47.3
+627  1931     Black       Male                            49.5
+628  1932     Black       Male                            52.8
+629  1933     Black       Male                            53.5
+630  1934     Black       Male                            50.2
+631  1935     Black       Male                            51.3
+632  1936     Black       Male                            47.0
+633  1937     Black       Male                            48.3
+634  1938     Black       Male                            51.7
+635  1939     Black       Male                            53.2
+636  1940     Black       Male                            51.5
+637  1941     Black       Male                            52.5
+638  1942     Black       Male                            55.4
+639  1943     Black       Male                            55.4
+640  1944     Black       Male                            55.8
+641  1945     Black       Male                            56.1
+642  1946     Black       Male                            57.5
+643  1947     Black       Male                            57.9
+644  1948     Black       Male                            58.1
+645  1949     Black       Male                            58.9
+646  1950     Black       Male                            59.1
+647  1951     Black       Male                            59.2
+648  1952     Black       Male                            59.1
+649  1953     Black       Male                            59.7
+650  1954     Black       Male                            61.1
+651  1955     Black       Male                            61.4
+652  1956     Black       Male                            61.3
+653  1957     Black       Male                            60.7
+654  1958     Black       Male                            61.0
+655  1959     Black       Male                            61.3
+656  1960     Black       Male                            61.1
+657  1961     Black       Male                            62.0
+658  1962     Black       Male                            61.6
+659  1963     Black       Male                            61.0
+660  1964     Black       Male                            61.3
+661  1965     Black       Male                            61.2
+662  1966     Black       Male                            60.9
+663  1967     Black       Male                            61.4
+664  1968     Black       Male                            60.4
+665  1969     Black       Male                            60.6
+666  1970     Black       Male                            60.0
+667  1971     Black       Male                            60.5
+668  1972     Black       Male                            60.4
+669  1973     Black       Male                            60.9
+670  1974     Black       Male                            61.7
+671  1975     Black       Male                            62.4
+672  1976     Black       Male                            62.9
+673  1977     Black       Male                            63.4
+674  1978     Black       Male                            63.7
+675  1979     Black       Male                            64.0
+676  1980     Black       Male                            63.8
+677  1981     Black       Male                            64.5
+678  1982     Black       Male                            65.1
+679  1983     Black       Male                            65.2
+680  1984     Black       Male                            65.3
+681  1985     Black       Male                            65.0
+682  1986     Black       Male                            64.8
+683  1987     Black       Male                            64.7
+684  1988     Black       Male                            64.4
+685  1989     Black       Male                            64.3
+686  1990     Black       Male                            64.5
+687  1991     Black       Male                            64.6
+688  1992     Black       Male                            65.0
+689  1993     Black       Male                            64.6
+690  1994     Black       Male                            64.9
+691  1995     Black       Male                            65.2
+692  1996     Black       Male                            66.1
+693  1997     Black       Male                            67.2
+694  1998     Black       Male                            67.6
+695  1999     Black       Male                            67.8
+696  2000     Black       Male                            68.2
+697  2001     Black       Male                            68.5
+698  2002     Black       Male                            68.7
+699  2003     Black       Male                            68.9
+700  2004     Black       Male                            69.4
+701  2005     Black       Male                            69.5
+702  2006     Black       Male                            69.9
+703  2007     Black       Male                            70.3
+704  2008     Black       Male                            70.9
+705  2009     Black       Male                            71.4
+706  2010     Black       Male                            71.8
+707  2011     Black       Male                            72.2
+708  2012     Black       Male                            72.3
+709  2013     Black       Male                            72.3
+710  2014     Black       Male                            72.5
+711  2015     Black       Male                            72.2
+712  2016     Black       Male                            72.0
+713  2017     Black       Male                            71.9
+714  2018     Black       Male                              NA
+715  1900     White Both Sexes                            47.6
+716  1901     White Both Sexes                            49.4
+717  1902     White Both Sexes                            51.9
+718  1903     White Both Sexes                            50.9
+719  1904     White Both Sexes                            48.0
+720  1905     White Both Sexes                            49.1
+721  1906     White Both Sexes                            49.3
+722  1907     White Both Sexes                            48.1
+723  1908     White Both Sexes                            51.5
+724  1909     White Both Sexes                            52.5
+725  1910     White Both Sexes                            50.3
+726  1911     White Both Sexes                            53.0
+727  1912     White Both Sexes                            53.9
+728  1913     White Both Sexes                            53.0
+729  1914     White Both Sexes                            54.9
+730  1915     White Both Sexes                            55.1
+731  1916     White Both Sexes                            52.5
+732  1917     White Both Sexes                            52.0
+733  1918     White Both Sexes                            39.8
+734  1919     White Both Sexes                            55.8
+735  1920     White Both Sexes                            54.9
+736  1921     White Both Sexes                            61.8
+737  1922     White Both Sexes                            60.4
+738  1923     White Both Sexes                            58.3
+739  1924     White Both Sexes                            61.4
+740  1925     White Both Sexes                            60.7
+741  1926     White Both Sexes                            58.2
+742  1927     White Both Sexes                            62.0
+743  1928     White Both Sexes                            58.4
+744  1929     White Both Sexes                            58.6
+745  1930     White Both Sexes                            61.4
+746  1931     White Both Sexes                            62.6
+747  1932     White Both Sexes                            63.2
+748  1933     White Both Sexes                            64.3
+749  1934     White Both Sexes                            62.4
+750  1935     White Both Sexes                            62.9
+751  1936     White Both Sexes                            59.8
+752  1937     White Both Sexes                            61.4
+753  1938     White Both Sexes                            65.0
+754  1939     White Both Sexes                            64.9
+755  1940     White Both Sexes                            64.2
+756  1941     White Both Sexes                            66.2
+757  1942     White Both Sexes                            67.3
+758  1943     White Both Sexes                            64.2
+759  1944     White Both Sexes                            66.2
+760  1945     White Both Sexes                            66.8
+761  1946     White Both Sexes                            67.5
+762  1947     White Both Sexes                            67.6
+763  1948     White Both Sexes                            68.0
+764  1949     White Both Sexes                            68.8
+765  1950     White Both Sexes                            69.1
+766  1951     White Both Sexes                            69.3
+767  1952     White Both Sexes                            69.5
+768  1953     White Both Sexes                            69.7
+769  1954     White Both Sexes                            70.5
+770  1955     White Both Sexes                            70.5
+771  1956     White Both Sexes                            70.5
+772  1957     White Both Sexes                            70.3
+773  1958     White Both Sexes                            70.5
+774  1959     White Both Sexes                            70.7
+775  1960     White Both Sexes                            70.6
+776  1961     White Both Sexes                            71.0
+777  1962     White Both Sexes                            70.9
+778  1963     White Both Sexes                            70.8
+779  1964     White Both Sexes                            71.0
+780  1965     White Both Sexes                            71.1
+781  1966     White Both Sexes                            71.1
+782  1967     White Both Sexes                            71.4
+783  1968     White Both Sexes                            71.1
+784  1969     White Both Sexes                            71.4
+785  1970     White Both Sexes                            71.7
+786  1971     White Both Sexes                            72.0
+787  1972     White Both Sexes                            72.0
+788  1973     White Both Sexes                            72.2
+789  1974     White Both Sexes                            72.8
+790  1975     White Both Sexes                            73.4
+791  1976     White Both Sexes                            73.6
+792  1977     White Both Sexes                            74.0
+793  1978     White Both Sexes                            74.1
+794  1979     White Both Sexes                            74.6
+795  1980     White Both Sexes                            74.4
+796  1981     White Both Sexes                            74.8
+797  1982     White Both Sexes                            75.1
+798  1983     White Both Sexes                            75.2
+799  1984     White Both Sexes                            75.3
+800  1985     White Both Sexes                            75.3
+801  1986     White Both Sexes                            75.4
+802  1987     White Both Sexes                            75.6
+803  1988     White Both Sexes                            75.6
+804  1989     White Both Sexes                            75.9
+805  1990     White Both Sexes                            76.1
+806  1991     White Both Sexes                            76.3
+807  1992     White Both Sexes                            76.5
+808  1993     White Both Sexes                            76.3
+809  1994     White Both Sexes                            76.5
+810  1995     White Both Sexes                            76.5
+811  1996     White Both Sexes                            76.8
+812  1997     White Both Sexes                            77.1
+813  1998     White Both Sexes                            77.3
+814  1999     White Both Sexes                            77.3
+815  2000     White Both Sexes                            77.3
+816  2001     White Both Sexes                            77.5
+817  2002     White Both Sexes                            77.5
+818  2003     White Both Sexes                            77.7
+819  2004     White Both Sexes                            78.1
+820  2005     White Both Sexes                            78.0
+821  2006     White Both Sexes                            78.3
+822  2007     White Both Sexes                            78.5
+823  2008     White Both Sexes                            78.5
+824  2009     White Both Sexes                            78.8
+825  2010     White Both Sexes                            78.9
+826  2011     White Both Sexes                            79.0
+827  2012     White Both Sexes                            79.1
+828  2013     White Both Sexes                            79.1
+829  2014     White Both Sexes                            79.1
+830  2015     White Both Sexes                            78.9
+831  2016     White Both Sexes                            78.9
+832  2017     White Both Sexes                            78.8
+833  2018     White Both Sexes                              NA
+834  1900     White     Female                            48.7
+835  1901     White     Female                            51.0
+836  1902     White     Female                            53.8
+837  1903     White     Female                            52.5
+838  1904     White     Female                            49.5
+839  1905     White     Female                            50.6
+840  1906     White     Female                            51.4
+841  1907     White     Female                            50.4
+842  1908     White     Female                            53.3
+843  1909     White     Female                            54.2
+844  1910     White     Female                            52.0
+845  1911     White     Female                            54.9
+846  1912     White     Female                            56.2
+847  1913     White     Female                            55.7
+848  1914     White     Female                            57.5
+849  1915     White     Female                            57.5
+850  1916     White     Female                            55.2
+851  1917     White     Female                            55.3
+852  1918     White     Female                            43.2
+853  1919     White     Female                            57.4
+854  1920     White     Female                            55.6
+855  1921     White     Female                            62.9
+856  1922     White     Female                            61.9
+857  1923     White     Female                            59.6
+858  1924     White     Female                            63.4
+859  1925     White     Female                            62.4
+860  1926     White     Female                            59.6
+861  1927     White     Female                            63.9
+862  1928     White     Female                            60.0
+863  1929     White     Female                            60.3
+864  1930     White     Female                            63.5
+865  1931     White     Female                            64.7
+866  1932     White     Female                            64.5
+867  1933     White     Female                            66.3
+868  1934     White     Female                            64.6
+869  1935     White     Female                            65.0
+870  1936     White     Female                            61.9
+871  1937     White     Female                            63.8
+872  1938     White     Female                            66.8
+873  1939     White     Female                            66.6
+874  1940     White     Female                            66.6
+875  1941     White     Female                            68.5
+876  1942     White     Female                            69.4
+877  1943     White     Female                            65.7
+878  1944     White     Female                            68.4
+879  1945     White     Female                            69.5
+880  1946     White     Female                            70.3
+881  1947     White     Female                            70.5
+882  1948     White     Female                            71.0
+883  1949     White     Female                            71.9
+884  1950     White     Female                            72.2
+885  1951     White     Female                            72.4
+886  1952     White     Female                            72.6
+887  1953     White     Female                            73.0
+888  1954     White     Female                            73.7
+889  1955     White     Female                            73.7
+890  1956     White     Female                            73.9
+891  1957     White     Female                            73.7
+892  1958     White     Female                            73.9
+893  1959     White     Female                            74.2
+894  1960     White     Female                            74.1
+895  1961     White     Female                            74.6
+896  1962     White     Female                            74.5
+897  1963     White     Female                            74.4
+898  1964     White     Female                            74.7
+899  1965     White     Female                            74.8
+900  1966     White     Female                            74.8
+901  1967     White     Female                            75.2
+902  1968     White     Female                            75.0
+903  1969     White     Female                            75.3
+904  1970     White     Female                            75.6
+905  1971     White     Female                            75.8
+906  1972     White     Female                            75.9
+907  1973     White     Female                            76.1
+908  1974     White     Female                            76.7
+909  1975     White     Female                            77.3
+910  1976     White     Female                            77.5
+911  1977     White     Female                            77.9
+912  1978     White     Female                            78.0
+913  1979     White     Female                            78.4
+914  1980     White     Female                            78.1
+915  1981     White     Female                            78.4
+916  1982     White     Female                            78.7
+917  1983     White     Female                            78.7
+918  1984     White     Female                            78.7
+919  1985     White     Female                            78.7
+920  1986     White     Female                            78.8
+921  1987     White     Female                            78.9
+922  1988     White     Female                            78.9
+923  1989     White     Female                            79.2
+924  1990     White     Female                            79.4
+925  1991     White     Female                            79.6
+926  1992     White     Female                            79.8
+927  1993     White     Female                            79.5
+928  1994     White     Female                            79.6
+929  1995     White     Female                            79.6
+930  1996     White     Female                            79.7
+931  1997     White     Female                            79.9
+932  1998     White     Female                            80.0
+933  1999     White     Female                            79.9
+934  2000     White     Female                            79.9
+935  2001     White     Female                            80.0
+936  2002     White     Female                            80.1
+937  2003     White     Female                            80.2
+938  2004     White     Female                            80.5
+939  2005     White     Female                            80.5
+940  2006     White     Female                            80.7
+941  2007     White     Female                            80.9
+942  2008     White     Female                            80.9
+943  2009     White     Female                            81.2
+944  2010     White     Female                            81.3
+945  2011     White     Female                            81.3
+946  2012     White     Female                            81.4
+947  2013     White     Female                            81.4
+948  2014     White     Female                            81.4
+949  2015     White     Female                            81.3
+950  2016     White     Female                            81.3
+951  2017     White     Female                            81.2
+952  2018     White     Female                              NA
+953  1900     White       Male                            46.6
+954  1901     White       Male                            48.0
+955  1902     White       Male                            50.2
+956  1903     White       Male                            49.5
+957  1904     White       Male                            46.6
+958  1905     White       Male                            47.6
+959  1906     White       Male                            47.3
+960  1907     White       Male                            46.0
+961  1908     White       Male                            49.9
+962  1909     White       Male                            50.9
+963  1910     White       Male                            48.6
+964  1911     White       Male                            51.3
+965  1912     White       Male                            51.9
+966  1913     White       Male                            50.8
+967  1914     White       Male                            52.7
+968  1915     White       Male                            53.1
+969  1916     White       Male                            50.2
+970  1917     White       Male                            49.3
+971  1918     White       Male                            37.1
+972  1919     White       Male                            54.5
+973  1920     White       Male                            54.4
+974  1921     White       Male                            60.8
+975  1922     White       Male                            59.1
+976  1923     White       Male                            57.1
+977  1924     White       Male                            59.8
+978  1925     White       Male                            59.3
+979  1926     White       Male                            57.0
+980  1927     White       Male                            60.5
+981  1928     White       Male                            57.0
+982  1929     White       Male                            57.2
+983  1930     White       Male                            59.7
+984  1931     White       Male                            60.8
+985  1932     White       Male                            62.0
+986  1933     White       Male                            62.7
+987  1934     White       Male                            60.5
+988  1935     White       Male                            61.0
+989  1936     White       Male                            58.0
+990  1937     White       Male                            59.3
+991  1938     White       Male                            63.2
+992  1939     White       Male                            63.3
+993  1940     White       Male                            62.1
+994  1941     White       Male                            64.4
+995  1942     White       Male                            65.9
+996  1943     White       Male                            63.2
+997  1944     White       Male                            64.5
+998  1945     White       Male                            64.4
+999  1946     White       Male                            65.1
+1000 1947     White       Male                            65.2
+1001 1948     White       Male                            65.5
+1002 1949     White       Male                            66.2
+1003 1950     White       Male                            66.5
+1004 1951     White       Male                            66.5
+1005 1952     White       Male                            66.6
+1006 1953     White       Male                            66.8
+1007 1954     White       Male                            67.5
+1008 1955     White       Male                            67.4
+1009 1956     White       Male                            67.5
+1010 1957     White       Male                            67.2
+1011 1958     White       Male                            67.4
+1012 1959     White       Male                            67.5
+1013 1960     White       Male                            67.4
+1014 1961     White       Male                            67.8
+1015 1962     White       Male                            67.7
+1016 1963     White       Male                            67.4
+1017 1964     White       Male                            67.7
+1018 1965     White       Male                            67.6
+1019 1966     White       Male                            67.5
+1020 1967     White       Male                            67.8
+1021 1968     White       Male                            67.5
+1022 1969     White       Male                            67.7
+1023 1970     White       Male                            68.0
+1024 1971     White       Male                            68.3
+1025 1972     White       Male                            68.3
+1026 1973     White       Male                            68.5
+1027 1974     White       Male                            69.0
+1028 1975     White       Male                            69.5
+1029 1976     White       Male                            69.9
+1030 1977     White       Male                            70.2
+1031 1978     White       Male                            70.4
+1032 1979     White       Male                            70.8
+1033 1980     White       Male                            70.7
+1034 1981     White       Male                            71.1
+1035 1982     White       Male                            71.5
+1036 1983     White       Male                            71.6
+1037 1984     White       Male                            71.8
+1038 1985     White       Male                            71.8
+1039 1986     White       Male                            71.9
+1040 1987     White       Male                            72.1
+1041 1988     White       Male                            72.2
+1042 1989     White       Male                            72.5
+1043 1990     White       Male                            72.7
+1044 1991     White       Male                            72.9
+1045 1992     White       Male                            73.2
+1046 1993     White       Male                            73.1
+1047 1994     White       Male                            73.3
+1048 1995     White       Male                            73.4
+1049 1996     White       Male                            73.9
+1050 1997     White       Male                            74.3
+1051 1998     White       Male                            74.5
+1052 1999     White       Male                            74.6
+1053 2000     White       Male                            74.7
+1054 2001     White       Male                            74.9
+1055 2002     White       Male                            74.9
+1056 2003     White       Male                            75.1
+1057 2004     White       Male                            75.5
+1058 2005     White       Male                            75.5
+1059 2006     White       Male                            75.8
+1060 2007     White       Male                            76.0
+1061 2008     White       Male                            76.1
+1062 2009     White       Male                            76.4
+1063 2010     White       Male                            76.5
+1064 2011     White       Male                            76.6
+1065 2012     White       Male                            76.7
+1066 2013     White       Male                            76.7
+1067 2014     White       Male                            76.7
+1068 2015     White       Male                            76.6
+1069 2016     White       Male                            76.4
+1070 2017     White       Male                            76.4
+1071 2018     White       Male                              NA
+     Age.adjusted.Death.Rate
+1                     2518.0
+2                     2473.1
+3                     2301.3
+4                     2379.0
+5                     2502.5
+6                     2423.7
+7                     2399.0
+8                     2494.4
+9                     2298.9
+10                    2249.2
+11                    2317.2
+12                    2245.4
+13                    2211.7
+14                    2206.5
+15                    2149.3
+16                    2174.8
+17                    2266.6
+18                    2275.9
+19                    2541.6
+20                    2057.2
+21                    2147.1
+22                    1958.2
+23                    2049.5
+24                    2141.4
+25                    2038.0
+26                    2068.7
+27                    2146.2
+28                    1989.5
+29                    2124.6
+30                    2081.2
+31                    1943.8
+32                    1895.1
+33                    1897.1
+34                    1850.1
+35                    1888.2
+36                    1860.1
+37                    1963.7
+38                    1882.6
+39                    1764.3
+40                    1766.9
+41                    1785.0
+42                    1694.6
+43                    1635.8
+44                    1702.4
+45                    1618.5
+46                    1575.4
+47                    1529.7
+48                    1532.0
+49                    1501.7
+50                    1457.3
+51                    1446.0
+52                    1423.5
+53                    1394.6
+54                    1385.6
+55                    1314.8
+56                    1332.3
+57                    1333.7
+58                    1356.7
+59                    1343.4
+60                    1317.3
+61                    1339.2
+62                    1298.8
+63                    1323.6
+64                    1346.3
+65                    1303.8
+66                    1306.5
+67                    1309.0
+68                    1274.0
+69                    1304.5
+70                    1271.8
+71                    1222.6
+72                    1213.1
+73                    1214.8
+74                    1201.2
+75                    1151.8
+76                    1094.4
+77                    1084.1
+78                    1051.6
+79                    1043.7
+80                    1010.6
+81                    1038.7
+82                    1007.0
+83                     984.9
+84                     990.0
+85                     982.1
+86                     987.8
+87                     978.4
+88                     969.6
+89                     975.1
+90                     949.9
+91                     938.0
+92                     921.9
+93                     905.3
+94                     925.8
+95                     913.2
+96                     909.5
+97                     893.7
+98                     877.7
+99                     870.1
+100                    875.6
+101                    869.0
+102                    858.8
+103                    855.9
+104                    843.5
+105                    813.7
+106                    815.0
+107                    791.8
+108                    775.3
+109                    774.9
+110                    749.6
+111                    747.0
+112                    741.3
+113                    732.8
+114                    731.9
+115                    724.6
+116                    733.1
+117                    728.8
+118                    731.9
+119                    723.6
+120                   2410.4
+121                   2350.5
+122                   2162.8
+123                   2250.6
+124                   2358.8
+125                   2287.7
+126                   2244.6
+127                   2327.3
+128                   2162.3
+129                   2111.5
+130                   2171.3
+131                   2112.1
+132                   2067.2
+133                   2058.1
+134                   2009.0
+135                   2044.3
+136                   2123.3
+137                   2119.9
+138                   2342.8
+139                   1973.1
+140                   2081.3
+141                   1890.4
+142                   1965.1
+143                   2050.5
+144                   1927.2
+145                   1957.1
+146                   2028.0
+147                   1863.8
+148                   1990.5
+149                   1940.9
+150                   1798.3
+151                   1743.6
+152                   1758.4
+153                   1699.1
+154                   1720.7
+155                   1690.6
+156                   1780.6
+157                   1695.1
+158                   1599.1
+159                   1599.8
+160                   1599.4
+161                   1502.4
+162                   1444.7
+163                   1507.8
+164                   1428.4
+165                   1376.8
+166                   1342.8
+167                   1332.5
+168                   1296.4
+169                   1252.6
+170                   1236.0
+171                   1213.4
+172                   1186.7
+173                   1172.6
+174                   1109.7
+175                   1121.9
+176                   1117.5
+177                   1134.5
+178                   1120.9
+179                   1093.5
+180                   1105.3
+181                   1068.5
+182                   1087.1
+183                   1098.5
+184                   1061.5
+185                   1056.1
+186                   1055.3
+187                   1020.5
+188                   1043.5
+189                   1013.4
+190                    971.4
+191                    960.6
+192                    958.7
+193                    947.8
+194                    907.5
+195                    855.1
+196                    849.4
+197                    820.7
+198                    816.4
+199                    789.9
+200                    817.7
+201                    792.7
+202                    776.4
+203                    783.3
+204                    779.4
+205                    784.2
+206                    778.5
+207                    773.8
+208                    780.5
+209                    761.3
+210                    750.3
+211                    737.9
+212                    725.3
+213                    745.6
+214                    738.3
+215                    739.2
+216                    732.7
+217                    725.3
+218                    724.2
+219                    734.0
+220                    731.4
+221                    725.6
+222                    723.6
+223                    715.2
+224                    690.5
+225                    692.3
+226                    672.2
+227                    658.1
+228                    660.0
+229                    636.8
+230                    634.9
+231                    632.4
+232                    624.7
+233                    623.5
+234                    616.7
+235                    624.2
+236                    617.5
+237                    619.7
+238                    611.3
+239                   2630.8
+240                   2600.5
+241                   2447.9
+242                   2513.5
+243                   2652.9
+244                   2565.5
+245                   2553.6
+246                   2660.3
+247                   2433.4
+248                   2385.7
+249                   2459.9
+250                   2374.5
+251                   2352.8
+252                   2351.2
+253                   2286.1
+254                   2302.6
+255                   2406.2
+256                   2427.8
+257                   2740.5
+258                   2141.5
+259                   2213.2
+260                   2025.0
+261                   2131.8
+262                   2229.5
+263                   2146.9
+264                   2178.0
+265                   2262.2
+266                   2113.8
+267                   2256.3
+268                   2219.7
+269                   2088.8
+270                   2047.4
+271                   2036.4
+272                   2002.0
+273                   2056.7
+274                   2031.2
+275                   2148.5
+276                   2072.8
+277                   1932.4
+278                   1937.2
+279                   1976.0
+280                   1894.3
+281                   1835.1
+282                   1907.7
+283                   1821.6
+284                   1791.6
+285                   1727.6
+286                   1743.0
+287                   1720.5
+288                   1676.7
+289                   1674.2
+290                   1651.7
+291                   1620.8
+292                   1619.0
+293                   1540.7
+294                   1565.2
+295                   1575.5
+296                   1606.7
+297                   1596.3
+298                   1573.4
+299                   1609.0
+300                   1567.6
+301                   1604.4
+302                   1644.0
+303                   1597.0
+304                   1614.3
+305                   1624.2
+306                   1591.8
+307                   1635.2
+308                   1601.4
+309                   1542.1
+310                   1542.5
+311                   1551.1
+312                   1537.5
+313                   1478.5
+314                   1417.4
+315                   1404.3
+316                   1369.3
+317                   1358.1
+318                   1316.2
+319                   1347.6
+320                   1308.2
+321                   1279.9
+322                   1284.4
+323                   1271.0
+324                   1277.6
+325                   1261.5
+326                   1245.7
+327                   1250.0
+328                   1214.2
+329                   1202.0
+330                   1180.2
+331                   1158.0
+332                   1177.0
+333                   1155.1
+334                   1143.6
+335                   1115.2
+336                   1087.7
+337                   1068.9
+338                   1067.0
+339                   1053.8
+340                   1035.3
+341                   1030.6
+342                   1010.3
+343                    973.3
+344                    971.9
+345                    943.4
+346                    922.9
+347                    918.8
+348                    890.9
+349                    887.1
+350                    875.3
+351                    865.1
+352                    863.6
+353                    855.1
+354                    863.2
+355                    861.0
+356                    864.5
+357                    855.5
+358                   3423.3
+359                   3338.4
+360                   3190.4
+361                   3373.7
+362                   3586.2
+363                   3440.1
+364                   3223.4
+365                   3295.1
+366                   3048.2
+367                   3006.9
+368                   2983.5
+369                   3000.6
+370                   2959.2
+371                   2906.6
+372                   2914.6
+373                   3021.8
+374                   2940.3
+375                   3069.6
+376                   3411.9
+377                   2648.5
+378                   2743.3
+379                   2459.8
+380                   2507.8
+381                   2717.8
+382                   2806.5
+383                   2858.7
+384                   2906.0
+385                   2676.2
+386                   2835.5
+387                   2832.6
+388                   2682.9
+389                   2516.0
+390                   2397.3
+391                   2307.9
+392                   2386.5
+393                   2316.0
+394                   2496.6
+395                   2374.0
+396                   2217.2
+397                   2157.0
+398                   2254.1
+399                   2142.8
+400                   1988.9
+401                   2006.9
+402                   1904.5
+403                   1808.8
+404                   1711.7
+405                   1749.7
+406                   1766.9
+407                   1739.9
+408                   1757.6
+409                   1698.2
+410                   1671.3
+411                   1641.2
+412                   1514.8
+413                   1510.2
+414                   1519.2
+415                   1571.7
+416                   1552.1
+417                   1504.4
+418                   1549.0
+419                   1492.2
+420                   1532.0
+421                   1581.5
+422                   1507.1
+423                   1508.9
+424                   1529.7
+425                   1466.9
+426                   1615.6
+427                   1570.4
+428                   1518.1
+429                   1481.3
+430                   1486.3
+431                   1473.3
+432                   1397.7
+433                   1327.5
+434                   1311.2
+435                   1286.0
+436                   1267.7
+437                   1238.5
+438                   1312.9
+439                   1256.5
+440                   1220.1
+441                   1239.8
+442                   1234.5
+443                   1259.1
+444                   1264.6
+445                   1260.9
+446                   1281.9
+447                   1273.5
+448                   1248.5
+449                   1233.6
+450                   1205.3
+451                   1240.2
+452                   1216.2
+453                   1213.6
+454                   1177.6
+455                   1139.2
+456                   1127.1
+457                   1135.7
+458                   1121.4
+459                   1106.2
+460                   1097.3
+461                   1080.5
+462                   1043.8
+463                   1035.1
+464                    997.9
+465                    972.0
+466                    947.6
+467                    912.8
+468                    898.2
+469                    877.1
+470                    864.8
+471                    860.8
+472                    849.3
+473                    851.9
+474                    857.2
+475                    854.1
+476                    852.9
+477                   3308.0
+478                   3167.2
+479                   3003.4
+480                   3210.9
+481                   3362.4
+482                   3247.5
+483                   3115.4
+484                   3179.3
+485                   2963.6
+486                   2875.6
+487                   2875.3
+488                   2899.8
+489                   2807.7
+490                   2802.7
+491                   2810.1
+492                   2948.8
+493                   2853.6
+494                   2970.6
+495                   3304.3
+496                   2663.2
+497                   2756.2
+498                   2475.0
+499                   2476.1
+500                   2657.8
+501                   2693.2
+502                   2741.9
+503                   2778.0
+504                   2565.5
+505                   2703.1
+506                   2664.8
+507                   2530.1
+508                   2362.8
+509                   2256.1
+510                   2174.1
+511                   2213.4
+512                   2136.5
+513                   2278.7
+514                   2158.5
+515                   2057.1
+516                   1992.4
+517                   2057.5
+518                   1945.9
+519                   1803.7
+520                   1837.6
+521                   1733.6
+522                   1634.8
+523                   1556.8
+524                   1586.1
+525                   1580.0
+526                   1572.2
+527                   1574.1
+528                   1508.3
+529                   1465.0
+530                   1434.3
+531                   1326.3
+532                   1326.7
+533                   1331.9
+534                   1374.6
+535                   1354.6
+536                   1305.0
+537                   1340.5
+538                   1295.9
+539                   1324.5
+540                   1347.8
+541                   1284.1
+542                   1266.0
+543                   1274.6
+544                   1209.7
+545                   1325.6
+546                   1274.9
+547                   1228.7
+548                   1196.8
+549                   1181.2
+550                   1179.7
+551                   1109.7
+552                   1042.4
+553                   1031.2
+554                   1012.2
+555                    995.1
+556                    967.1
+557                   1031.8
+558                    985.7
+559                    958.8
+560                    980.2
+561                    974.9
+562                    992.2
+563                    992.7
+564                    988.4
+565                   1005.4
+566                    995.8
+567                    973.6
+568                    961.8
+569                    941.4
+570                    968.6
+571                    954.0
+572                    955.7
+573                    939.6
+574                    921.6
+575                    921.0
+576                    933.6
+577                    927.6
+578                    917.9
+579                    913.5
+580                    898.3
+581                    869.8
+582                    862.7
+583                    828.4
+584                    808.1
+585                    792.0
+586                    763.3
+587                    752.5
+588                    739.8
+589                    723.9
+590                    720.6
+591                    713.3
+592                    710.8
+593                    712.9
+594                    706.1
+595                    702.6
+596                   3576.5
+597                   3524.8
+598                   3399.8
+599                   3546.5
+600                   3845.7
+601                   3654.7
+602                   3341.0
+603                   3408.1
+604                   3140.0
+605                   3149.0
+606                   3087.5
+607                   3094.2
+608                   3114.2
+609                   3011.9
+610                   3017.4
+611                   3104.1
+612                   3035.1
+613                   3172.8
+614                   3532.5
+615                   2650.0
+616                   2748.4
+617                   2461.2
+618                   2560.4
+619                   2803.9
+620                   2947.0
+621                   3000.7
+622                   3054.7
+623                   2801.1
+624                   2980.3
+625                   3012.6
+626                   2845.5
+627                   2680.3
+628                   2550.0
+629                   2452.1
+630                   2567.5
+631                   2502.9
+632                   2722.4
+633                   2596.1
+634                   2384.3
+635                   2328.1
+636                   2458.9
+637                   2351.1
+638                   2187.8
+639                   2189.9
+640                   2084.9
+641                   2002.7
+642                   1878.6
+643                   1922.8
+644                   1954.3
+645                   1915.4
+646                   1949.5
+647                   1903.4
+648                   1894.1
+649                   1863.1
+650                   1726.6
+651                   1707.5
+652                   1724.1
+653                   1797.0
+654                   1779.2
+655                   1724.7
+656                   1777.6
+657                   1713.3
+658                   1775.4
+659                   1859.0
+660                   1768.1
+661                   1791.0
+662                   1832.4
+663                   1767.2
+664                   1976.8
+665                   1934.4
+666                   1873.9
+667                   1836.1
+668                   1871.8
+669                   1849.5
+670                   1769.5
+671                   1697.0
+672                   1676.0
+673                   1647.9
+674                   1626.9
+675                   1601.5
+676                   1695.5
+677                   1626.6
+678                   1580.0
+679                   1600.5
+680                   1597.1
+681                   1632.9
+682                   1648.4
+683                   1646.3
+684                   1673.1
+685                   1666.1
+686                   1642.4
+687                   1624.1
+688                   1586.2
+689                   1631.1
+690                   1591.9
+691                   1585.2
+692                   1523.2
+693                   1458.2
+694                   1429.8
+695                   1432.6
+696                   1403.5
+697                   1380.5
+698                   1364.8
+699                   1343.5
+700                   1296.9
+701                   1281.3
+702                   1239.5
+703                   1204.8
+704                   1168.0
+705                   1123.1
+706                   1104.0
+707                   1067.1
+708                   1058.6
+709                   1052.8
+710                   1034.0
+711                   1040.3
+712                   1049.5
+713                   1049.5
+714                   1051.5
+715                   2501.2
+716                   2456.2
+717                   2284.3
+718                   2359.8
+719                   2481.9
+720                   2404.1
+721                   2374.8
+722                   2470.8
+723                   2278.1
+724                   2228.5
+725                   2299.4
+726                   2221.3
+727                   2187.9
+728                   2176.7
+729                   2116.8
+730                   2139.4
+731                   2223.9
+732                   2221.5
+733                   2477.7
+734                   2005.6
+735                   2096.3
+736                   1914.9
+737                   2004.4
+738                   2087.0
+739                   1968.7
+740                   1999.1
+741                   2078.8
+742                   1925.6
+743                   2053.0
+744                   2006.8
+745                   1870.7
+746                   1832.5
+747                   1845.1
+748                   1800.5
+749                   1834.0
+750                   1809.9
+751                   1906.6
+752                   1829.1
+753                   1714.8
+754                   1724.0
+755                   1735.3
+756                   1645.0
+757                   1594.8
+758                   1665.8
+759                   1582.8
+760                   1544.3
+761                   1505.0
+762                   1503.5
+763                   1469.9
+764                   1424.3
+765                   1410.8
+766                   1391.0
+767                   1361.7
+768                   1354.6
+769                   1288.6
+770                   1308.3
+771                   1309.0
+772                   1328.7
+773                   1316.3
+774                   1291.9
+775                   1311.3
+776                   1272.2
+777                   1292.4
+778                   1312.5
+779                   1275.2
+780                   1278.3
+781                   1278.7
+782                   1246.4
+783                   1271.4
+784                   1240.2
+785                   1193.3
+786                   1183.8
+787                   1185.3
+788                   1171.5
+789                   1125.2
+790                   1069.4
+791                   1060.0
+792                   1027.1
+793                   1020.1
+794                    986.8
+795                   1012.5
+796                    984.0
+797                    963.5
+798                    967.4
+799                    959.4
+800                    963.4
+801                    952.8
+802                    943.2
+803                    947.2
+804                    919.8
+805                    909.2
+806                    893.0
+807                    877.5
+808                    896.8
+809                    885.3
+810                    882.0
+811                    868.7
+812                    855.4
+813                    848.9
+814                    854.6
+815                    849.8
+816                    840.7
+817                    839.0
+818                    827.1
+819                    798.5
+820                    801.1
+821                    779.3
+822                    764.3
+823                    767.2
+824                    742.8
+825                    741.8
+826                    738.8
+827                    730.9
+828                    731.0
+829                    725.4
+830                    735.0
+831                    729.9
+832                    734.5
+833                    725.4
+834                   2394.0
+835                   2334.7
+836                   2146.4
+837                   2231.5
+838                   2339.7
+839                   2269.0
+840                   2220.8
+841                   2303.8
+842                   2141.8
+843                   2092.1
+844                   2154.0
+845                   2088.3
+846                   2045.1
+847                   2027.6
+848                   1976.1
+849                   2008.4
+850                   2078.3
+851                   2063.3
+852                   2274.9
+853                   1915.1
+854                   2025.9
+855                   1842.3
+856                   1917.7
+857                   1995.9
+858                   1860.6
+859                   1890.5
+860                   1963.8
+861                   1800.4
+862                   1920.2
+863                   1869.9
+864                   1726.6
+865                   1681.8
+866                   1707.3
+867                   1649.4
+868                   1668.1
+869                   1642.0
+870                   1727.4
+871                   1644.3
+872                   1549.4
+873                   1556.8
+874                   1550.4
+875                   1453.2
+876                   1403.6
+877                   1469.1
+878                   1391.1
+879                   1344.7
+880                   1315.2
+881                   1301.6
+882                   1263.7
+883                   1217.3
+884                   1198.0
+885                   1179.1
+886                   1153.3
+887                   1141.0
+888                   1081.8
+889                   1095.4
+890                   1089.9
+891                   1104.1
+892                   1090.8
+893                   1065.3
+894                   1074.4
+895                   1038.8
+896                   1052.6
+897                   1062.6
+898                   1030.9
+899                   1026.7
+900                   1024.7
+901                    992.9
+902                   1012.2
+903                    984.2
+904                    944.0
+905                    933.4
+906                    932.9
+907                    921.4
+908                    884.2
+909                    834.1
+910                    828.9
+911                    799.7
+912                    796.6
+913                    770.1
+914                    796.0
+915                    773.6
+916                    758.6
+917                    764.1
+918                    760.5
+919                    764.2
+920                    758.0
+921                    753.2
+922                    758.7
+923                    738.3
+924                    728.3
+925                    715.9
+926                    703.9
+927                    723.9
+928                    717.3
+929                    718.4
+930                    713.3
+931                    707.5
+932                    706.9
+933                    716.6
+934                    715.3
+935                    710.4
+936                    709.3
+937                    701.6
+938                    677.7
+939                    680.9
+940                    662.3
+941                    649.4
+942                    653.7
+943                    631.3
+944                    630.8
+945                    630.3
+946                    623.8
+947                    623.6
+948                    617.6
+949                    627.0
+950                    619.4
+951                    623.5
+952                    614.6
+953                   2613.2
+954                   2582.3
+955                   2430.1
+956                   2494.2
+957                   2630.5
+958                   2544.7
+959                   2529.3
+960                   2637.0
+961                   2412.3
+962                   2363.8
+963                   2441.9
+964                   2350.3
+965                   2327.5
+966                   2322.1
+967                   2254.1
+968                   2267.8
+969                   2365.6
+970                   2375.9
+971                   2680.7
+972                   2096.0
+973                   2166.6
+974                   1986.2
+975                   2088.2
+976                   2174.2
+977                   2073.7
+978                   2104.4
+979                   2190.6
+980                   2048.6
+981                   2182.8
+982                   2141.2
+983                   2013.8
+984                   1983.6
+985                   1982.9
+986                   1952.2
+987                   2000.7
+988                   1979.3
+989                   2087.0
+990                   2016.5
+991                   1882.7
+992                   1894.4
+993                   1925.2
+994                   1844.1
+995                   1793.7
+996                   1872.9
+997                   1788.0
+998                   1761.6
+999                   1706.1
+1000                  1718.6
+1001                  1691.2
+1002                  1647.8
+1003                  1642.5
+1004                  1621.7
+1005                  1588.5
+1006                  1589.0
+1007                  1516.3
+1008                  1544.7
+1009                  1554.4
+1010                  1581.7
+1011                  1573.1
+1012                  1552.1
+1013                  1586.0
+1014                  1547.3
+1015                  1579.1
+1016                  1614.7
+1017                  1572.0
+1018                  1589.9
+1019                  1595.7
+1020                  1566.9
+1021                  1602.7
+1022                  1570.4
+1023                  1513.7
+1024                  1514.4
+1025                  1520.2
+1026                  1507.2
+1027                  1450.8
+1028                  1391.1
+1029                  1379.5
+1030                  1343.5
+1031                  1332.5
+1032                  1289.5
+1033                  1317.4
+1034                  1282.4
+1035                  1255.9
+1036                  1259.8
+1037                  1245.5
+1038                  1249.5
+1039                  1230.5
+1040                  1213.1
+1041                  1215.5
+1042                  1176.0
+1043                  1165.3
+1044                  1142.8
+1045                  1122.2
+1046                  1138.7
+1047                  1118.4
+1048                  1107.2
+1049                  1082.5
+1050                  1058.7
+1051                  1041.6
+1052                  1040.1
+1053                  1029.4
+1054                  1012.1
+1055                  1009.0
+1056                   988.8
+1057                   953.2
+1058                   952.9
+1059                   925.8
+1060                   907.1
+1061                   907.1
+1062                   880.5
+1063                   878.5
+1064                   870.2
+1065                   860.0
+1066                   859.2
+1067                   853.4
+1068                   861.9
+1069                   858.9
+1070                   863.4
+1071                   853.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gh, <span class="fu">aes</span>(<span class="at">x =</span> Sex, <span class="at">y =</span> Average.Life.Expectancy..Years.)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 6 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="THEFINALLLLLLL_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>MEAN</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gh <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sex) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_life_expectancy =</span> <span class="fu">mean</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_life_expectancy =</span> <span class="fu">sd</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_death_rate =</span> <span class="fu">mean</span>(Age.adjusted.Death.Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_death_rate =</span> <span class="fu">sd</span>(Age.adjusted.Death.Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  Sex      mean_life_expectancy sd_life_expectancy mean_death_rate sd_death_rate
+  &lt;chr&gt;                   &lt;dbl&gt;              &lt;dbl&gt;           &lt;dbl&gt;         &lt;dbl&gt;
+1 Both Se…                 64.5               11.7           1581.          669.
+2 Female                   67.1               12.3           1405.          689.
+3 Male                     61.9               11.0           1793.          634.</code></pre>
+</div>
+</div>
+<p>STANDARD DEV</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gh <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"Male"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sd_life_expectancy =</span> <span class="fu">sd</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sd_life_expectancy
+1           11.00433</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>gh <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sd_life_expectancy =</span> <span class="fu">sd</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sd_life_expectancy
+1           12.28742</code></pre>
+</div>
+</div>
+<p>MAX for males and females</p>
+<p>females</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gh <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_life_expectancy =</span> <span class="fu">min</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_life_expectancy =</span> <span class="fu">max</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  min_life_expectancy max_life_expectancy
+1                32.5                81.4</code></pre>
+</div>
+</div>
+<p>males</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>gh <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"Male"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_life_expectancy =</span> <span class="fu">min</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_life_expectancy =</span> <span class="fu">max</span>(Average.Life.Expectancy..Years., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  min_life_expectancy max_life_expectancy
+1                29.1                76.7</code></pre>
+</div>
+</div>
+<p>TTEST TWOSAMPLE</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>gh_filtered <span class="ot">&lt;-</span> gh <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sex <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>t_test_result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(Average.Life.Expectancy..Years. <span class="sc">~</span> Sex, <span class="at">data =</span> gh_filtered)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>t_test_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Average.Life.Expectancy..Years. by Sex
+t = 5.9433, df = 699.56, p-value = 4.405e-09
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ 3.484276 6.921921
+sample estimates:
+mean in group Female   mean in group Male 
+            67.11915             61.91606 </code></pre>
+</div>
+</div>
+<p>CONCLUSION</p>
+<p>T-test</p>
+<p>To confirm the finding I looked at the T-test</p>
+<p>The median is 67.12 for women</p>
+<p>The median for men is 61.92</p>
+<p>The P value shows that the data is statistically significant since it is small enough.</p>
+<p>In conclusion, we can see that women live 5 years longer than men and that we could be experiencing a slight plateauing of life expectancy in both men and women.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
+<script>window.backupDefine = window.define; window.define = undefined;</script>
+<script type="text/javascript" src="quarto-preview.js"></script>
+<script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+<script type="text/javascript">
+  const options = {
+    origin: "",
+    search: "",
+    inputFile: "/Users/nathanielcruz/Desktop/stat230-assignment-04-3/THEFINALLLLLLL.qmd",
+    isPresentation: false
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    window.QuartoPreview.init(options);
+  });
+</script>
